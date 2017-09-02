@@ -5,9 +5,14 @@ require.config({
 		cookie : 'jquery-cookie/jquery.cookie',
 		common : '../js/common',
 		template : 'artTemplate/template-web',
+		bootstrap : 'bootstrap/js/bootstrap.min',
 		login : '../js/login',
 		teacherlist : '../js/teacher-list'
-
-
+	},
+	shim : {//把非标准转
+		bootstrap : {
+			deps : ['jquery']
+		}
 	}
+
 });
