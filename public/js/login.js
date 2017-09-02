@@ -9,7 +9,9 @@ define(['jquery','cookie'],function($){
                 success : function(data){
                     if(data.code==200){
                         //存储用户信息到cookie
-                    $.cookie('loginInfo',JSON.stringify(data.result),{patn : '/'});
+                        // console.log(data);
+                    $.cookie('loginInfo',JSON.stringify(data.result),{path : '/'});
+                    // console.log( $.cookie('loginInfo'));
                         //登录成功
                         location.href ='/main/index';
                     }else{
