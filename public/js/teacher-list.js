@@ -25,7 +25,28 @@ define(['jquery','template','bootstrap'],function($,template){
 		      		$('#teacherModal').modal(); //bootstrap 的方法（modal()）他有两种控制方法(js 和 类)
 		      	}
 		      });
-	      })
+	        });
+			//处理注销事件
+			$('.eod').click(function(){
+				var td= $(this).closest('td');
+				var tcId= td.attr('data-tcId');
+				var tcStatus=td.attr('data-status');
+				var that= this; //点击的按钮
+				$.ajax({
+					type : 'post',
+					url : '/api/teacher/handle',
+					data : {tc_id : tcId,tc_status : tcStatus},
+					dataType : 'json',
+					success : function(data){
+						td.attr('data-status',data.result.tc_status);
+						if(data.result.tc_status==0){
+							$(that).html('注 销');
+						}else{
+							$(that).html('启 用');
+						}
+					}
+				});
+			});
 		}
 	});
 
