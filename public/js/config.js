@@ -7,7 +7,10 @@ require.config({
 		template : 'artTemplate/template-web',
 		bootstrap : 'bootstrap/js/bootstrap.min',
 		login : '../js/login',
-		teacherlist : '../js/teacher-list'
+		index : '../js/index',
+		util : '../js/util',
+		teacherlist : '../js/teacher-list',
+		teacheradd : '../js/teacher-add'
 	},
 	shim : {//把非标准转
 		bootstrap : {
